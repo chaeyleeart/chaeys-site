@@ -191,7 +191,11 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
   }
   .nav-links.open { transform:none; }
   .nav-toggle { display:block; z-index:60; }
-  .cv
+  .cv-grid { grid-template-columns: 1fr; gap:0; }
+  .cv-grid dt { border-top:1px solid var(--line); padding-bottom:0; }
+  .cv-grid dd { border-top:none; padding-top:.2rem; padding-bottom:.8rem; }
+}
+
 /* ---------- Brand logo ---------- */
 .brand-logo { height: 40px; width: auto; display: block; }
 @media (max-width: 720px){ .brand-logo { height: 34px; } }
