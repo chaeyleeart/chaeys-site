@@ -8,199 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<style>
-/* =========================================================
-   chaeys.com — Chaeyoung Lee / 이채영
-   Media artist · Infoborg / The Non-Callable
-   Pure white, Pretendard, minimal monochrome.
-   ========================================================= */
-
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
-
-:root {
-  --bg:        #ffffff;
-  --bg-2:      #fafafa;
-  --ink:       #111111;
-  --ink-soft:  #3d3d3d;
-  --muted:     #8a8a8a;
-  --line:      #e7e7e7;
-  --line-2:    #d8d8d8;
-  --accent:    #111111;   /* monochrome — accents are ink */
-
-  --sans: 'Pretendard', system-ui, -apple-system, 'Segoe UI', sans-serif;
-
-  --maxw: 1140px;
-  --pad: clamp(1.25rem, 5vw, 4rem);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.75;
-  letter-spacing: -0.012em;
-  font-weight: 400;
-}
-
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-
-.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
-
-/* ---------- Header ---------- */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.nav {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding-block: 1.05rem;
-}
-.brand {
-  font-size: 1.05rem; letter-spacing: 0.02em; font-weight: 600;
-  line-height: 1.1;
-}
-.brand small { display:block; font-size:.6rem; letter-spacing:.26em; color:var(--muted); font-weight:500; text-transform:uppercase; margin-top:3px;}
-.nav-links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); align-items:center; }
-.nav-links a {
-  font-size: .85rem; letter-spacing: -0.01em; color: var(--ink-soft); font-weight: 500;
-  position: relative; padding-bottom: 3px; transition: color .2s;
-}
-.nav-links a .en { display:block; font-size:.58rem; letter-spacing:.16em; color:var(--muted); text-transform:uppercase; font-weight:500;}
-.nav-links a::after {
-  content:''; position:absolute; left:0; bottom:0; height:1.5px; width:0;
-  background: var(--ink); transition: width .25s ease;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--ink); }
-.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
-
-.nav-toggle { display:none; background:none; border:none; cursor:pointer; font-size:1.5rem; line-height:1; color:var(--ink);}
-
-/* ---------- Hero ---------- */
-.hero { padding-block: clamp(4rem, 13vh, 8.5rem) clamp(2.5rem, 8vh, 5rem); }
-.hero .kicker {
-  font-size:.7rem; letter-spacing:.26em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:1.8rem; font-weight:500;
-}
-.hero h1 {
-  font-weight: 600;
-  font-size: clamp(2rem, 5.4vw, 4rem); line-height: 1.18;
-  letter-spacing: -0.035em; max-width: 20ch;
-}
-.hero h1 em { font-style: normal; color: var(--ink); border-bottom: 3px solid var(--ink); padding-bottom:1px; }
-.hero .lede {
-  margin-top: 2rem; max-width: 46ch;
-  font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--ink-soft); font-weight:400;
-}
-.hero .sig { margin-top:2.4rem; font-size:.8rem; letter-spacing:0; color:var(--muted); font-weight:500;}
-
-/* ---------- Generic section ---------- */
-section { padding-block: clamp(2.5rem, 7vh, 5rem); }
-.section-label {
-  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:2.2rem; font-weight:600;
-  display:flex; align-items:center; gap:1rem;
-}
-.section-label::after { content:''; flex:1; height:1px; background:var(--line); }
-
-h2.lead {
-  font-weight:600;
-  font-size:clamp(1.5rem,3.6vw,2.5rem); line-height:1.32; letter-spacing:-0.03em;
-  max-width:26ch;
-}
-h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--line-2); }
-
-.prose { max-width: 62ch; }
-.prose p { margin-top: 1.3rem; color: var(--ink-soft); }
-.prose p:first-child { margin-top: 0; }
-.prose strong { font-weight:600; color:var(--ink); }
-.prose .en { color: var(--muted); font-size:.92em; }
-
-/* ---------- Concept pillars ---------- */
-.pillars { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:0; border-top:1px solid var(--line); margin-top:2.5rem;}
-.pillar { padding: 2rem 1.8rem 2.2rem 0; border-bottom:1px solid var(--line); }
-.pillar .num { color:var(--muted); font-size:.9rem; font-weight:600; font-variant-numeric:tabular-nums;}
-.pillar h3 { font-weight:600; font-size:1.3rem; margin:.5rem 0 .2rem; letter-spacing:-0.02em;}
-.pillar .en-term { font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:500;}
-.pillar p { margin-top:.9rem; font-size:.93rem; color:var(--ink-soft); max-width:34ch;}
-
-/* ---------- Works ---------- */
-.work { display:grid; grid-template-columns: 1fr; gap:1.4rem; padding-block: clamp(2.2rem,5vh,4rem); border-top:1px solid var(--line); }
-.work:last-of-type { border-bottom:1px solid var(--line); }
-.work-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:1rem; justify-content:space-between;}
-.work-title { font-weight:600; font-size:clamp(1.4rem,3.2vw,2.1rem); letter-spacing:-0.03em;}
-.work-title em { font-style:normal; }
-.work-meta { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); white-space:nowrap; font-weight:500; display:flex; align-items:center; gap:.6rem;}
-.badge { display:inline-block; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
-  color:var(--ink); border:1px solid var(--line-2); border-radius:999px; padding:.18rem .65rem; }
-.work-body { max-width:64ch; color:var(--ink-soft); }
-.work-body .en { display:block; margin-top:.8rem; color:var(--muted); font-size:.93em;}
-.work-tags { margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:.5rem;}
-.tag { font-size:.7rem; letter-spacing:0; color:var(--ink-soft); background:var(--bg-2); border:1px solid var(--line); border-radius:4px; padding:.2rem .6rem; font-weight:500;}
-
-.work-figure { aspect-ratio: 16/9; background: var(--bg-2);
-   border:1px solid var(--line); border-radius:4px; position:relative; overflow:hidden;
-   display:flex; align-items:center; justify-content:center;}
-.work-figure::before { content:''; position:absolute; inset:0;
-   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-   background-size: 28px 28px; opacity:.5;}
-.work-figure span { position:relative; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:500;}
-
-/* ---------- CV ---------- */
-.cv-grid { display:grid; grid-template-columns: 180px 1fr; gap:.2rem 2.5rem; }
-.cv-grid dt { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding-top:.95rem; border-top:1px solid var(--line); font-weight:600;}
-.cv-grid dd { padding-top:.95rem; border-top:1px solid var(--line); color:var(--ink-soft); }
-.cv-grid dd strong { color:var(--ink); font-weight:600; }
-.cv-grid dd .yr { color:var(--muted); font-variant-numeric:tabular-nums; margin-right:.6rem; font-weight:500;}
-
-/* ---------- Pull quote ---------- */
-.pullquote { font-weight:600;
-  font-size:clamp(1.3rem,3vw,2rem); line-height:1.5; max-width:26ch; color:var(--ink); letter-spacing:-0.025em;
-  border-left:2px solid var(--ink); padding-left:1.5rem; margin-block:1rem;}
-
-/* ---------- CTA / contact ---------- */
-.contact-box { border:1px solid var(--line); border-radius:6px; padding:clamp(1.8rem,5vw,3rem); background:var(--bg-2); }
-.contact-box a.mail { font-size:clamp(1.2rem,3.4vw,2rem); color:var(--ink); font-weight:600; border-bottom:2px solid var(--ink); letter-spacing:-0.02em;}
-.contact-box a.mail:hover { color:var(--muted); border-color:var(--muted); }
-
-/* ---------- Footer ---------- */
-.site-footer { border-top:1px solid var(--line); margin-top:2.5rem; padding-block:2.5rem 3.5rem; color:var(--muted); font-size:.78rem;}
-.site-footer .row { display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:baseline;}
-.site-footer a:hover { color:var(--ink); }
-
-/* ---------- Reveal animation ---------- */
-.reveal { opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.in { opacity:1; transform:none; }
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 720px) {
-  body { font-size:16px; }
-  .nav-links {
-    position: fixed; inset: 0 0 0 auto; width: min(78vw, 320px);
-    background: var(--bg); flex-direction: column; align-items:flex-start;
-    padding: 5rem 2rem; gap:1.8rem; transform: translateX(100%);
-    transition: transform .3s ease; box-shadow:-20px 0 60px rgba(0,0,0,.06); border-left:1px solid var(--line);
-  }
-  .nav-links.open { transform:none; }
-  .nav-toggle { display:block; z-index:60; }
-  .cv-grid { grid-template-columns: 1fr; gap:0; }
-  .cv-grid dt { border-top:1px solid var(--line); padding-bottom:0; }
-  .cv-grid dd { border-top:none; padding-top:.2rem; padding-bottom:.8rem; }
-}
-
-/* ---------- Bilingual block (KO → EN) ---------- */
-.bl { margin-top: 1.5rem; max-width: 60ch; }
-.bl:first-child { margin-top: 0; }
-.bl .ko { color: var(
-</style>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -210,8 +18,8 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
     <button class="nav-toggle" aria-label="메뉴 열기">≡</button>
     <nav class="nav-links">
       <a href="index.html">홈<span class="en">Index</span></a>
+      <a href="research.html">리서치<span class="en">Research</span></a>
       <a href="works.html">작업<span class="en">Works</span></a>
-      <a href="statement.html">이론<span class="en">Theory</span></a>
       <a href="about.html" class="active">약력<span class="en">About</span></a>
     </nav>
   </div>
@@ -248,7 +56,7 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
       <dd><span class="yr">2025</span>ISEA 2025 — International Symposium on Electronic Art</dd>
 
       <dt>핵심 개념 / Concepts</dt>
-      <dd>인포보그(Infoborg) · 비호출 존재(the Non-Callable) · 호출 가능성(callability) · 잉여체</dd>
+      <dd><a href="research-infoborg.html" style="border-bottom:1px solid var(--accent);">인포보그(Infoborg)</a> · <a href="research-noncallable.html" style="border-bottom:1px solid var(--accent);">비호출 존재(the Non-Callable)</a> · 호출 가능성(callability) · 잉여체(the Uncomputable)</dd>
 
       <dt>매체 / Media</dt>
       <dd>AI 생성 이미지·영상 · 언리얼 메타휴먼 · 프로젝션 매핑 / 인터랙티브 설치 (확장 중)</dd>
@@ -280,45 +88,6 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
   </div>
 </footer>
 
-<script>
-// chaeys.com — interactions
-(function () {
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.textContent = open ? '×' : '≡';
-    });
-    links.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.textContent = '≡';
-      })
-    );
-  }
-
-  // Scroll reveal
-  const items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && items.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-    );
-    items.forEach((el) => io.observe(el));
-  } else {
-    items.forEach((el) => el.classList.add('in'));
-  }
-})();
-
-</script>
+<script src="main.js"></script>
 </body>
 </html>
