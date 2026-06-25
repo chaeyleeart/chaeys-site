@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이론·노트 Statement — 이채영 Chaeyoung Lee</title>
+<meta name="description" content="비호출 존재 — 재생산과 데이터화의 점근적 한계. 이채영의 이론 선언문." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+/* =========================================================
+   chaeys.com — Chaeyoung Lee / 이채영
+   Media artist · Infoborg / The Non-Callable
+   Pure white, Pretendard, minimal monochrome.
+   ========================================================= */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+:root {
+  --bg:        #ffffff;
+  --bg-2:      #fafafa;
+  --ink:       #111111;
+  --ink-soft:  #3d3d3d;
+  --muted:     #8a8a8a;
+  --line:      #e7e7e7;
+  --line-2:    #d8d8d8;
+  --accent:    #111111;   /* monochrome — accents are ink */
+
+  --sans: 'Pretendard', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --maxw: 1140px;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding-block: 1.05rem;
+}
+.brand {
+  font-size: 1.05rem; letter-spacing: 0.02em; font-weight: 600;
+  line-height: 1.1;
+}
+.brand small { display:block; font-size:.6rem; letter-spacing:.26em; color:var(--muted); font-weight:500; text-transform:uppercase; margin-top:3px;}
+.nav-links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); align-items:center; }
+.nav-links a {
+  font-size: .85rem; letter-spacing: -0.01em; color: var(--ink-soft); font-weight: 500;
+  position: relative; padding-bottom: 3px; transition: color .2s;
+}
+.nav-links a .en { display:block; font-size:.58rem; letter-spacing:.16em; color:var(--muted); text-transform:uppercase; font-weight:500;}
+.nav-links a::after {
+  content:''; position:absolute; left:0; bottom:0; height:1.5px; width:0;
+  background: var(--ink); transition: width .25s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+
+.nav-toggle { display:none; background:none; border:none; cursor:pointer; font-size:1.5rem; line-height:1; color:var(--ink);}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(4rem, 13vh, 8.5rem) clamp(2.5rem, 8vh, 5rem); }
+.hero .kicker {
+  font-size:.7rem; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:1.8rem; font-weight:500;
+}
+.hero h1 {
+  font-weight: 600;
+  font-size: clamp(2rem, 5.4vw, 4rem); line-height: 1.18;
+  letter-spacing: -0.035em; max-width: 20ch;
+}
+.hero h1 em { font-style: normal; color: var(--ink); border-bottom: 3px solid var(--ink); padding-bottom:1px; }
+.hero .lede {
+  margin-top: 2rem; max-width: 46ch;
+  font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--ink-soft); font-weight:400;
+}
+.hero .sig { margin-top:2.4rem; font-size:.8rem; letter-spacing:0; color:var(--muted); font-weight:500;}
+
+/* ---------- Generic section ---------- */
+section { padding-block: clamp(2.5rem, 7vh, 5rem); }
+.section-label {
+  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:2.2rem; font-weight:600;
+  display:flex; align-items:center; gap:1rem;
+}
+.section-label::after { content:''; flex:1; height:1px; background:var(--line); }
+
+h2.lead {
+  font-weight:600;
+  font-size:clamp(1.5rem,3.6vw,2.5rem); line-height:1.32; letter-spacing:-0.03em;
+  max-width:26ch;
+}
+h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--line-2); }
+
+.prose { max-width: 62ch; }
+.prose p { margin-top: 1.3rem; color: var(--ink-soft); }
+.prose p:first-child { margin-top: 0; }
+.prose strong { font-weight:600; color:var(--ink); }
+.prose .en { color: var(--muted); font-size:.92em; }
+
+/* ---------- Concept pillars ---------- */
+.pillars { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:0; border-top:1px solid var(--line); margin-top:2.5rem;}
+.pillar { padding: 2rem 1.8rem 2.2rem 0; border-bottom:1px solid var(--line); }
+.pillar .num { color:var(--muted); font-size:.9rem; font-weight:600; font-variant-numeric:tabular-nums;}
+.pillar h3 { font-weight:600; font-size:1.3rem; margin:.5rem 0 .2rem; letter-spacing:-0.02em;}
+.pillar .en-term { font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:500;}
+.pillar p { margin-top:.9rem; font-size:.93rem; color:var(--ink-soft); max-width:34ch;}
+
+/* ---------- Works ---------- */
+.work { display:grid; grid-template-columns: 1fr; gap:1.4rem; padding-block: clamp(2.2rem,5vh,4rem); border-top:1px solid var(--line); }
+.work:last-of-type { border-bottom:1px solid var(--line); }
+.work-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:1rem; justify-content:space-between;}
+.work-title { font-weight:600; font-size:clamp(1.4rem,3.2vw,2.1rem); letter-spacing:-0.03em;}
+.work-title em { font-style:normal; }
+.work-meta { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); white-space:nowrap; font-weight:500; display:flex; align-items:center; gap:.6rem;}
+.badge { display:inline-block; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--ink); border:1px solid var(--line-2); border-radius:999px; padding:.18rem .65rem; }
+.work-body { max-width:64ch; color:var(--ink-soft); }
+.work-body .en { display:block; margin-top:.8rem; color:var(--muted); font-size:.93em;}
+.work-tags { margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:.5rem;}
+.tag { font-size:.7rem; letter-spacing:0; color:var(--ink-soft); background:var(--bg-2); border:1px solid var(--line); border-radius:4px; padding:.2rem .6rem; font-weight:500;}
+
+.work-figure { aspect-ratio: 16/9; background: var(--bg-2);
+   border:1px solid var(--line); border-radius:4px; position:relative; overflow:hidden;
+   display:flex; align-items:center; justify-content:center;}
+.work-figure::before { content:''; position:absolute; inset:0;
+   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+   background-size: 28px 28px; opacity:.5;}
+.work-figure span { position:relative; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:500;}
+
+/* ---------- CV ---------- */
+.cv-grid { display:grid; grid-template-columns: 180px 1fr; gap:.2rem 2.5rem; }
+.cv-grid dt { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding-top:.95rem; border-top:1px solid var(--line); font-weight:600;}
+.cv-grid dd { padding-top:.95rem; border-top:1px solid var(--line); color:var(--ink-soft); }
+.cv-grid dd strong { color:var(--ink); font-weight:600; }
+.cv-grid dd .yr { color:var(--muted); font-variant-numeric:tabular-nums; margin-right:.6rem; font-weight:500;}
+
+/* ---------- Pull quote ---------- */
+.pullquote { font-weight:600;
+  font-size:clamp(1.3rem,3vw,2rem); line-height:1.5; max-width:26ch; color:var(--ink); letter-spacing:-0.025em;
+  border-left:2px solid var(--ink); padding-left:1.5rem; margin-block:1rem;}
+
+/* ---------- CTA / contact ---------- */
+.contact-box { border:1px solid var(--line); border-radius:6px; padding:clamp(1.8rem,5vw,3rem); background:var(--bg-2); }
+.contact-box a.mail { font-size:clamp(1.2rem,3.4vw,2rem); color:var(--ink); font-weight:600; border-bottom:2px solid var(--ink); letter-spacing:-0.02em;}
+.contact-box a.mail:hover { color:var(--muted); border-color:var(--muted); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top:1px solid var(--line); margin-top:2.5rem; padding-block:2.5rem 3.5rem; color:var(--muted); font-size:.78rem;}
+.site-footer .row { display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:baseline;}
+.site-footer a:hover { color:var(--ink); }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  body { font-size:16px; }
+  .nav-links {
+    position: fixed; inset: 0 0 0 auto; width: min(78vw, 320px);
+    background: var(--bg); flex-direction: column; align-items:flex-start;
+    padding: 5rem 2rem; gap:1.8rem; transform: translateX(100%);
+    transition: transform .3s ease; box-shadow:-20px 0 60px rgba(0,0,0,.06); border-left:1px solid var(--line);
+  }
+  .nav-links.open { transform:none; }
+  .nav-toggle { display:block; z-index:60; }
+  .cv
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">이채영<small>Chaeyoung Lee</small></a>
+    <button class="nav-toggle" aria-label="메뉴 열기">≡</button>
+    <nav class="nav-links">
+      <a href="index.html">소개<span class="en">Index</span></a>
+      <a href="works.html">작업<span class="en">Works</span></a>
+      <a href="statement.html" class="active">이론·노트<span class="en">Statement</span></a>
+      <a href="about.html">약력<span class="en">About</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:1rem;">
+    <p class="kicker reveal">Artist Statement &amp; Theoretical Position</p>
+    <h1 class="reveal" style="font-size:clamp(2rem,5vw,3.4rem);">비호출 존재<br><span style="color:var(--muted);font-weight:500;font-size:.5em;letter-spacing:.02em;">The Non-Callable</span></h1>
+    <p class="lede reveal">무엇이 인간을 ‘있게’ 하는가. 우리는 몸을 가졌기 때문에 존재하는가, 아니면 어떤 시스템이 우리를 불러낼 수 있기 때문에 존재하는가.</p>
+  </section>
+
+  <section>
+    <div class="section-label reveal">Ⅰ — 인포보그 · 데이터가 된 인간</div>
+    <div class="prose reveal">
+      <p>오늘날 디지털 자본주의는 인간의 감정·기억·신체 반응·관계·욕망까지 데이터로 추출한다. 한때 가장 사적이고 형언 불가능하다 여겨졌던 것들 &mdash; 슬픔, 사랑, 꿈 &mdash; 마저 측정되고 저장되고 연산 가능한 단위로 재조정된다. 나는 석사 연구에서 이 조건 속에 출현하는 새로운 존재를 <strong>‘인포보그(Infoborg)’</strong>라 명명했다.</p>
+      <p>인포보그는 기계와 결합한 사이보그가 아니다. 감정·기억·신체가 데이터로 분리되어 정보 시스템 안에서 호출되고 연산되고 자기참조를 통해 구성되는 존재다. 여기서 결정적인 개념은 <strong>호출 가능성(callability)</strong>이다. 이 세계에서 존재한다는 것은 단지 살아 있다는 뜻이 아니라, 시스템이 너를 인식하고 불러낼 수 있다는 뜻이다.</p>
+      <p class="en">To exist is not to be alive, but to be callable — to be summoned by the system.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label reveal">Ⅱ — 균열 · 점근적 한계</div>
+    <div class="prose reveal">
+      <p>그러나 인포보그를 밀고 나가면서 나는 한 가지에 부딪혔다. 정말 모든 것이 데이터가 되는가. 나의 대답은 이렇다. <strong>데이터화는 점근적(asymptotic)이다.</strong> 그것은 끝없이 다가가지만 결코 자신을 완성하지 못한다. 시스템이 인간 존재를 한 겹 포획할 때마다, 그 모델에 들어맞지 않는 잔여가 새로 생겨난다.</p>
+      <p>나는 이 잔여를 <strong>‘비호출 존재(the Non-Callable)’</strong>라 부른다. 그것은 데이터 ‘바깥’의 순수한 자연이 아니다 &mdash; 그런 바깥은 없다. 그것은 데이터화 한가운데서, 데이터화가 스스로 만들어내고도 끝내 포획하지 못하는 가장자리다. 인포보그가 호출 가능한 주체라면, 비호출 존재는 연산이 닫지 못하는 잔여다. 둘은 적이 아니라 한 쌍이다.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="pullquote reveal">데이터화는 점근적이다 — 자신이 만든 잔여를 결코 닫지 못한다.</p>
+  </section>
+
+  <section>
+    <div class="section-label reveal">Ⅲ — 잉태 · 한계가 가장 격렬히 드러나는 무대</div>
+    <div class="prose reveal">
+      <p>이 잔여가 가장 폭력적으로, 가장 가시적으로 드러나는 자리가 재생산이다. 오늘날 자본은 잉태를 분할하고 연산하려 가장 강하게 밀어붙인다 &mdash; 시험관 시술, 배아 선별, 산전검사, 대리모, 인공자궁 연구. 잉태는 결코 시스템 바깥에 있지 않다.</p>
+      <p>그러나 바로 그렇기 때문에 잉태는 비호출 존재가 출현하는 가장 강렬한 무대가 된다. 포획이 깊어질수록 잔여는 더 선명해진다. 측정되는 것은 주기와 수치와 예정일이지만, 끝내 측정되지 않는 것이 있다 &mdash; 이 몸에서의 연속, 의지와 무관하게 진행되는 변화, 사랑이면서 동시에 거부인 양가감정, 그리고 아직 어디에도 등록되지 않은 한 존재.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label reveal">Ⅳ — 방법 · 한계의 안쪽에서 쓰는 이론</div>
+    <div class="prose reveal">
+      <p>나는 이 이론을 바깥에서 관찰하며 쓰지 않는다. 데이터화된 몸을 이론화하는 동시에, 그 한계-사건을 내 몸으로 통과하고 있는 사람이다. 이것은 약점이 아니라 이 작업의 인식론적 토대다. 객관적 거리에서 내려다보는 지식이 아니라, 도나 해러웨이가 <strong>‘상황적 지식(situated knowledge)’</strong>이라 부른 것 &mdash; 특정한 몸의 위치에서 발화되는 앎. 이 위치는 어떤 이론가도 대신 점할 수 없다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label reveal">선언 — Manifesto</div>
+    <div class="prose reveal">
+      <p>&mdash; 존재는 호출 가능성으로 환원되지 않는다.</p>
+      <p>&mdash; 데이터화는 점근적이다 &mdash; 자신이 만든 잔여를 결코 닫지 못한다.</p>
+      <p>&mdash; 잉태는 한계가 아니라, 한계가 매번 다시 그어지는 자리다.</p>
+      <p>&mdash; 나는 그 한계의 안쪽에서, 호출되지 않는 것을 위하여 쓴다.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <span>© 2026 이채영 Chaeyoung Lee. All rights reserved.</span>
+    <span><a href="mailto:chaeyleeart@gmail.com">chaeyleeart@gmail.com</a> · www.chaeys.com</span>
+  </div>
+</footer>
+
+<script>
+// chaeys.com — interactions
+(function () {
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.textContent = open ? '×' : '≡';
+    });
+    links.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.textContent = '≡';
+      })
+    );
+  }
+
+  // Scroll reveal
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && items.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add('in'));
+  }
+})();
+
+</script>
+</body>
+</html>

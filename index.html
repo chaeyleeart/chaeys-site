@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이채영 Chaeyoung Lee — 미디어아트</title>
+<meta name="description" content="이채영(Chaeyoung Lee) — 미디어아트 작가. 인포보그와 비호출 존재, 데이터가 된 신체에 대한 영상·설치 작업." />
+<meta property="og:title" content="이채영 Chaeyoung Lee — 미디어아트" />
+<meta property="og:description" content="데이터가 된 신체, 호출 가능성, 그리고 끝내 연산되지 않는 잔여 — 인포보그와 비호출 존재." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.chaeys.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+/* =========================================================
+   chaeys.com — Chaeyoung Lee / 이채영
+   Media artist · Infoborg / The Non-Callable
+   Pure white, Pretendard, minimal monochrome.
+   ========================================================= */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+:root {
+  --bg:        #ffffff;
+  --bg-2:      #fafafa;
+  --ink:       #111111;
+  --ink-soft:  #3d3d3d;
+  --muted:     #8a8a8a;
+  --line:      #e7e7e7;
+  --line-2:    #d8d8d8;
+  --accent:    #111111;   /* monochrome — accents are ink */
+
+  --sans: 'Pretendard', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --maxw: 1140px;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding-block: 1.05rem;
+}
+.brand {
+  font-size: 1.05rem; letter-spacing: 0.02em; font-weight: 600;
+  line-height: 1.1;
+}
+.brand small { display:block; font-size:.6rem; letter-spacing:.26em; color:var(--muted); font-weight:500; text-transform:uppercase; margin-top:3px;}
+.nav-links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); align-items:center; }
+.nav-links a {
+  font-size: .85rem; letter-spacing: -0.01em; color: var(--ink-soft); font-weight: 500;
+  position: relative; padding-bottom: 3px; transition: color .2s;
+}
+.nav-links a .en { display:block; font-size:.58rem; letter-spacing:.16em; color:var(--muted); text-transform:uppercase; font-weight:500;}
+.nav-links a::after {
+  content:''; position:absolute; left:0; bottom:0; height:1.5px; width:0;
+  background: var(--ink); transition: width .25s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+
+.nav-toggle { display:none; background:none; border:none; cursor:pointer; font-size:1.5rem; line-height:1; color:var(--ink);}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(4rem, 13vh, 8.5rem) clamp(2.5rem, 8vh, 5rem); }
+.hero .kicker {
+  font-size:.7rem; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:1.8rem; font-weight:500;
+}
+.hero h1 {
+  font-weight: 600;
+  font-size: clamp(2rem, 5.4vw, 4rem); line-height: 1.18;
+  letter-spacing: -0.035em; max-width: 20ch;
+}
+.hero h1 em { font-style: normal; color: var(--ink); border-bottom: 3px solid var(--ink); padding-bottom:1px; }
+.hero .lede {
+  margin-top: 2rem; max-width: 46ch;
+  font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--ink-soft); font-weight:400;
+}
+.hero .sig { margin-top:2.4rem; font-size:.8rem; letter-spacing:0; color:var(--muted); font-weight:500;}
+
+/* ---------- Generic section ---------- */
+section { padding-block: clamp(2.5rem, 7vh, 5rem); }
+.section-label {
+  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:2.2rem; font-weight:600;
+  display:flex; align-items:center; gap:1rem;
+}
+.section-label::after { content:''; flex:1; height:1px; background:var(--line); }
+
+h2.lead {
+  font-weight:600;
+  font-size:clamp(1.5rem,3.6vw,2.5rem); line-height:1.32; letter-spacing:-0.03em;
+  max-width:26ch;
+}
+h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--line-2); }
+
+.prose { max-width: 62ch; }
+.prose p { margin-top: 1.3rem; color: var(--ink-soft); }
+.prose p:first-child { margin-top: 0; }
+.prose strong { font-weight:600; color:var(--ink); }
+.prose .en { color: var(--muted); font-size:.92em; }
+
+/* ---------- Concept pillars ---------- */
+.pillars { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:0; border-top:1px solid var(--line); margin-top:2.5rem;}
+.pillar { padding: 2rem 1.8rem 2.2rem 0; border-bottom:1px solid var(--line); }
+.pillar .num { color:var(--muted); font-size:.9rem; font-weight:600; font-variant-numeric:tabular-nums;}
+.pillar h3 { font-weight:600; font-size:1.3rem; margin:.5rem 0 .2rem; letter-spacing:-0.02em;}
+.pillar .en-term { font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:500;}
+.pillar p { margin-top:.9rem; font-size:.93rem; color:var(--ink-soft); max-width:34ch;}
+
+/* ---------- Works ---------- */
+.work { display:grid; grid-template-columns: 1fr; gap:1.4rem; padding-block: clamp(2.2rem,5vh,4rem); border-top:1px solid var(--line); }
+.work:last-of-type { border-bottom:1px solid var(--line); }
+.work-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:1rem; justify-content:space-between;}
+.work-title { font-weight:600; font-size:clamp(1.4rem,3.2vw,2.1rem); letter-spacing:-0.03em;}
+.work-title em { font-style:normal; }
+.work-meta { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); white-space:nowrap; font-weight:500; display:flex; align-items:center; gap:.6rem;}
+.badge { display:inline-block; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--ink); border:1px solid var(--line-2); border-radius:999px; padding:.18rem .65rem; }
+.work-body { max-width:64ch; color:var(--ink-soft); }
+.work-body .en { display:block; margin-top:.8rem; color:var(--muted); font-size:.93em;}
+.work-tags { margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:.5rem;}
+.tag { font-size:.7rem; letter-spacing:0; color:var(--ink-soft); background:var(--bg-2); border:1px solid var(--line); border-radius:4px; padding:.2rem .6rem; font-weight:500;}
+
+.work-figure { aspect-ratio: 16/9; background: var(--bg-2);
+   border:1px solid var(--line); border-radius:4px; position:relative; overflow:hidden;
+   display:flex; align-items:center; justify-content:center;}
+.work-figure::before { content:''; position:absolute; inset:0;
+   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+   background-size: 28px 28px; opacity:.5;}
+.work-figure span { position:relative; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:500;}
+
+/* ---------- CV ---------- */
+.cv-grid { display:grid; grid-template-columns: 180px 1fr; gap:.2rem 2.5rem; }
+.cv-grid dt { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding-top:.95rem; border-top:1px solid var(--line); font-weight:600;}
+.cv-grid dd { padding-top:.95rem; border-top:1px solid var(--line); color:var(--ink-soft); }
+.cv-grid dd strong { color:var(--ink); font-weight:600; }
+.cv-grid dd .yr { color:var(--muted); font-variant-numeric:tabular-nums; margin-right:.6rem; font-weight:500;}
+
+/* ---------- Pull quote ---------- */
+.pullquote { font-weight:600;
+  font-size:clamp(1.3rem,3vw,2rem); line-height:1.5; max-width:26ch; color:var(--ink); letter-spacing:-0.025em;
+  border-left:2px solid var(--ink); padding-left:1.5rem; margin-block:1rem;}
+
+/* ---------- CTA / contact ---------- */
+.contact-box { border:1px solid var(--line); border-radius:6px; padding:clamp(1.8rem,5vw,3rem); background:var(--bg-2); }
+.contact-box a.mail { font-size:clamp(1.2rem,3.4vw,2rem); color:var(--ink); font-weight:600; border-bottom:2px solid var(--ink); letter-spacing:-0.02em;}
+.contact-box a.mail:hover { color:var(--muted); border-color:var(--muted); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top:1px solid var(--line); margin-top:2.5rem; padding-block:2.5rem 3.5rem; color:var(--muted); font-size:.78rem;}
+.site-footer .row { display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:baseline;}
+.site-footer a:hover { color:var(--ink); }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  body { font-size:16px; }
+  .nav-links {
+    position: fixed; inset: 0 0 0 auto; width: min(78vw, 320px);
+    background: var(--bg); flex-direction: column; align-items:flex-start;
+    padding: 5rem 2rem; gap:1.8rem; transform: translateX(100%);
+    transition: transform .3s ease; box-shadow:-20px 0 60px rgba(0,0,0,.06); border-left:1px solid var(--line);
+  }
+  .nav-links.open { transform:none; }
+  .nav-toggle { display:block; z-index:60; }
+  .cv
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">이채영<small>Chaeyoung Lee</small></a>
+    <button class="nav-toggle" aria-label="메뉴 열기">≡</button>
+    <nav class="nav-links">
+      <a href="index.html" class="active">소개<span class="en">Index</span></a>
+      <a href="works.html">작업<span class="en">Works</span></a>
+      <a href="statement.html">이론·노트<span class="en">Statement</span></a>
+      <a href="about.html">약력<span class="en">About</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="kicker reveal">Media Art · Infoborg / The Non-Callable</p>
+    <h1 class="reveal">몸을 가진 자가 인간인가,<br>몸을 <em>호출</em>할 수 있는 자가 인간인가.</h1>
+    <p class="lede reveal">데이터가 인간 존재의 조건을 대신 결정하기 시작한 시대에, 인간은 어떻게 존재하는가. 나는 이 질문을 이론과 영상·설치로 동시에 사유한다.</p>
+    <p class="sig reveal">이채영 Chaeyoung Lee · 미술이론 석사 · 미디어아트</p>
+  </section>
+
+  <section class="wrap">
+    <div class="section-label reveal">두 기둥 — Two Pillars</div>
+    <h2 class="lead reveal">존재는 <em>호출 가능성</em>으로 환원되지 않는다. 데이터화는 점근적이다 &mdash; 자신이 만든 잔여를 결코 닫지 못한다.</h2>
+
+    <div class="pillars">
+      <article class="pillar reveal">
+        <span class="num">i.</span>
+        <h3>인포보그</h3>
+        <span class="en-term">Infoborg — the callable subject</span>
+        <p>감정·기억·신체가 데이터로 분리되어 정보 시스템 안에서 호출·연산·자기참조를 통해 구성되는 존재. 석사 연구에서 제안한 첫 번째 기둥.</p>
+      </article>
+      <article class="pillar reveal">
+        <span class="num">ii.</span>
+        <h3>비호출 존재</h3>
+        <span class="en-term">The Non-Callable — the remainder</span>
+        <p>데이터화 한가운데서, 데이터화가 스스로 만들고도 끝내 포획하지 못하는 가장자리. 연산이 닫지 못하는 잔여 — 두 번째 기둥.</p>
+      </article>
+      <article class="pillar reveal">
+        <span class="num">iii.</span>
+        <h3>비렐리아</h3>
+        <span class="en-term">Virellia — the world</span>
+        <p>신체가 금융화되고 시민권이 거품처럼 거래되는 세계. 이론을 사건으로 만드는 무대이자, 작업이 자라나는 픽션의 토대.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-label reveal">지금 진행 중 — In Progress</div>
+    <div class="work reveal">
+      <div class="work-head">
+        <h2 class="work-title"><em>같은 배</em> / The Uncalled</h2>
+        <span class="work-meta">싱글채널 영상 · 개발 중</span>
+      </div>
+      <div class="work-body">
+        하나의 신체를 다섯이 요일별로 나누어 구독하는 사회. 자신을 ‘다섯 자매’라 믿도록 설계된 데이터 존재들이, 그 몸에 깃든 등록되지 않은 임신을 통해 정체성의 허구성과 마주한다.
+        <span class="en">Five beings subscribe to a single body, one weekday each, engineered to believe they are five sisters — until an unregistered gestation fractures the fiction.</span>
+      </div>
+      <a href="works.html" class="badge" style="width:max-content;">작업 전체 보기 →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <span>© 2026 이채영 Chaeyoung Lee. All rights reserved.</span>
+    <span><a href="mailto:chaeyleeart@gmail.com">chaeyleeart@gmail.com</a> · www.chaeys.com</span>
+  </div>
+</footer>
+
+<script>
+// chaeys.com — interactions
+(function () {
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.textContent = open ? '×' : '≡';
+    });
+    links.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.textContent = '≡';
+      })
+    );
+  }
+
+  // Scroll reveal
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && items.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add('in'));
+  }
+})();
+
+</script>
+</body>
+</html>
