@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>이채영 Chaeyoung Lee — 미디어아트</title>
-<meta name="description" content="이채영(Chaeyoung Lee) — 미디어아트 작가. 인포보그와 비호출 존재, 데이터가 된 신체에 대한 영상·설치 작업." />
+<meta name="description" content="이채영(Chaeyoung Lee) — 미디어아트 작가. 데이터가 된 신체와 호출 가능성을 영상·설치로 다룬다." />
 <meta property="og:title" content="이채영 Chaeyoung Lee — 미디어아트" />
-<meta property="og:description" content="데이터가 된 신체, 호출 가능성, 그리고 끝내 연산되지 않는 잔여 — 인포보그와 비호출 존재." />
+<meta property="og:description" content="Media artist working with the data-body and the limits of computation." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.chaeys.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,10 +200,10 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
   .cv-grid dd { border-top:none; padding-top:.2rem; padding-bottom:.8rem; }
 }
 
-/* ---------- Brand logo ---------- */
-.brand-logo { height: 40px; width: auto; display: block; }
-@media (max-width: 720px){ .brand-logo { height: 34px; } }
-
+/* ---------- Bilingual block (KO → EN) ---------- */
+.bl { margin-top: 1.5rem; max-width: 60ch; }
+.bl:first-child { margin-top: 0; }
+.bl .ko { color: var(
 </style>
 </head>
 <body>
@@ -213,9 +213,9 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
     <a href="index.html" class="brand" aria-label="이채영 Chaey Lee — 홈"><img src="logo.png" alt="이채영 Chaey Lee" class="brand-logo" /></a>
     <button class="nav-toggle" aria-label="메뉴 열기">≡</button>
     <nav class="nav-links">
-      <a href="index.html" class="active">소개<span class="en">Index</span></a>
+      <a href="index.html" class="active">홈<span class="en">Index</span></a>
       <a href="works.html">작업<span class="en">Works</span></a>
-      <a href="statement.html">이론·노트<span class="en">Statement</span></a>
+      <a href="statement.html">이론<span class="en">Theory</span></a>
       <a href="about.html">약력<span class="en">About</span></a>
     </nav>
   </div>
@@ -223,51 +223,43 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
 
 <main>
   <section class="hero wrap">
-    <p class="kicker reveal">Media Art · Infoborg / The Non-Callable</p>
-    <h1 class="reveal">몸을 가진 자가 인간인가,<br>몸을 <em>호출</em>할 수 있는 자가 인간인가.</h1>
-    <p class="lede reveal">데이터가 인간 존재의 조건을 대신 결정하기 시작한 시대에, 인간은 어떻게 존재하는가. 나는 이 질문을 이론과 영상·설치로 동시에 사유한다.</p>
-    <p class="sig reveal">이채영 Chaeyoung Lee · 미술이론 석사 · 미디어아트</p>
-  </section>
-
-  <section class="wrap">
-    <div class="section-label reveal">두 기둥 — Two Pillars</div>
-    <h2 class="lead reveal">존재는 <em>호출 가능성</em>으로 환원되지 않는다. 데이터화는 점근적이다 &mdash; 자신이 만든 잔여를 결코 닫지 못한다.</h2>
-
-    <div class="pillars">
-      <article class="pillar reveal">
-        <span class="num">i.</span>
-        <h3>인포보그</h3>
-        <span class="en-term">Infoborg — the callable subject</span>
-        <p>감정·기억·신체가 데이터로 분리되어 정보 시스템 안에서 호출·연산·자기참조를 통해 구성되는 존재. 석사 연구에서 제안한 첫 번째 기둥.</p>
-      </article>
-      <article class="pillar reveal">
-        <span class="num">ii.</span>
-        <h3>비호출 존재</h3>
-        <span class="en-term">The Non-Callable — the remainder</span>
-        <p>데이터화 한가운데서, 데이터화가 스스로 만들고도 끝내 포획하지 못하는 가장자리. 연산이 닫지 못하는 잔여 — 두 번째 기둥.</p>
-      </article>
-      <article class="pillar reveal">
-        <span class="num">iii.</span>
-        <h3>비렐리아</h3>
-        <span class="en-term">Virellia — the world</span>
-        <p>신체가 금융화되고 시민권이 거품처럼 거래되는 세계. 이론을 사건으로 만드는 무대이자, 작업이 자라나는 픽션의 토대.</p>
-      </article>
+    <p class="kicker reveal">Media Art · Art Theory</p>
+    <h1 class="reveal">이채영<br><span style="color:var(--muted);font-weight:500;font-size:.42em;letter-spacing:.02em;">Chaeyoung Lee</span></h1>
+    <div class="bl reveal" style="margin-top:2.2rem;">
+      <p class="ko">데이터가 된 신체를 영상과 설치로 다루는 미디어아트 작가.</p>
+      <p class="en">Media artist working with the data-body in moving image and installation.</p>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="section-label reveal">지금 진행 중 — In Progress</div>
-    <div class="work reveal">
-      <div class="work-head">
-        <h2 class="work-title"><em>같은 배</em> / The Uncalled</h2>
-        <span class="work-meta">싱글채널 영상 · 개발 중</span>
-      </div>
-      <div class="work-body">
-        하나의 신체를 다섯이 요일별로 나누어 구독하는 사회. 자신을 ‘다섯 자매’라 믿도록 설계된 데이터 존재들이, 그 몸에 깃든 등록되지 않은 임신을 통해 정체성의 허구성과 마주한다.
-        <span class="en">Five beings subscribe to a single body, one weekday each, engineered to believe they are five sisters — until an unregistered gestation fractures the fiction.</span>
-      </div>
-      <a href="works.html" class="badge" style="width:max-content;">작업 전체 보기 →</a>
+    <div class="section-label reveal">작업 — Works</div>
+    <div class="index-list">
+      <a href="works.html" class="index-item reveal">
+        <div class="it-top">
+          <span class="it-title"><em>비렐리아</em> / Virellia</span>
+          <span class="it-meta">에세이·보이스 영상 · 입사작</span>
+        </div>
+        <p class="it-ko">다섯 악장의 하강으로 이루어진 입구. 빛의 도시에서 하나의 몸을 나눠 쓰는 방까지 내려간다.</p>
+        <p class="it-en">A five-movement descent — from a city of light down to a single shared room.</p>
+      </a>
+      <a href="works.html" class="index-item reveal">
+        <div class="it-top">
+          <span class="it-title"><em>같은 배</em> / The Uncalled</span>
+          <span class="it-meta">싱글채널 영상 · 개발 중</span>
+        </div>
+        <p class="it-ko">하나의 몸을 다섯이 요일별로 구독하는 사회. 등록되지 않은 임신이 ‘다섯 자매’라는 허구에 균열을 낸다.</p>
+        <p class="it-en">Five beings subscribe to one body, one weekday each — until an unregistered gestation cracks the fiction.</p>
+      </a>
+      <a href="works.html" class="index-item reveal">
+        <div class="it-top">
+          <span class="it-title"><em>호출</em> / The Call</span>
+          <span class="it-meta">인터랙티브 설치 · 구상 중</span>
+        </div>
+        <p class="it-ko">관객이 직접 ‘호출’해야 몸이 나타나는 설치. 한 자아를 부르면 다른 자아는 사라진다.</p>
+        <p class="it-en">An installation where the body appears only when the audience performs the call.</p>
+      </a>
     </div>
+    <a href="works.html" class="more-link reveal">작업 전체 보기 · All works →</a>
   </section>
 </main>
 
@@ -320,3 +312,4 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

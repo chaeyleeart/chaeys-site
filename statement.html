@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>이론·노트 Statement — 이채영 Chaeyoung Lee</title>
-<meta name="description" content="비호출 존재 — 재생산과 데이터화의 점근적 한계. 이채영의 이론 선언문." />
+<title>이론 Theory — 이채영 Chaeyoung Lee</title>
+<meta name="description" content="인포보그와 비호출 존재 — 데이터화의 점근적 한계에 대한 이채영의 이론." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -196,10 +196,10 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
   .cv-grid dd { border-top:none; padding-top:.2rem; padding-bottom:.8rem; }
 }
 
-/* ---------- Brand logo ---------- */
-.brand-logo { height: 40px; width: auto; display: block; }
-@media (max-width: 720px){ .brand-logo { height: 34px; } }
-
+/* ---------- Bilingual block (KO → EN) ---------- */
+.bl { margin-top: 1.5rem; max-width: 60ch; }
+.bl:first-child { margin-top: 0; }
+.bl .ko { color: var(
 </style>
 </head>
 <body>
@@ -209,9 +209,9 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
     <a href="index.html" class="brand" aria-label="이채영 Chaey Lee — 홈"><img src="logo.png" alt="이채영 Chaey Lee" class="brand-logo" /></a>
     <button class="nav-toggle" aria-label="메뉴 열기">≡</button>
     <nav class="nav-links">
-      <a href="index.html">소개<span class="en">Index</span></a>
+      <a href="index.html">홈<span class="en">Index</span></a>
       <a href="works.html">작업<span class="en">Works</span></a>
-      <a href="statement.html" class="active">이론·노트<span class="en">Statement</span></a>
+      <a href="statement.html" class="active">이론<span class="en">Theory</span></a>
       <a href="about.html">약력<span class="en">About</span></a>
     </nav>
   </div>
@@ -219,17 +219,19 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
 
 <main class="wrap">
   <section class="hero" style="padding-bottom:1rem;">
-    <p class="kicker reveal">Artist Statement &amp; Theoretical Position</p>
-    <h1 class="reveal" style="font-size:clamp(2rem,5vw,3.4rem);">비호출 존재<br><span style="color:var(--muted);font-weight:500;font-size:.5em;letter-spacing:.02em;">The Non-Callable</span></h1>
-    <p class="lede reveal">무엇이 인간을 ‘있게’ 하는가. 우리는 몸을 가졌기 때문에 존재하는가, 아니면 어떤 시스템이 우리를 불러낼 수 있기 때문에 존재하는가.</p>
+    <p class="kicker reveal">Infoborg · The Non-Callable</p>
+    <h1 class="reveal" style="font-size:clamp(2rem,5vw,3.4rem);">인포보그와 비호출 존재<br><span style="color:var(--muted);font-weight:500;font-size:.4em;letter-spacing:.02em;">The Infoborg &amp; The Non-Callable</span></h1>
   </section>
 
   <section>
     <div class="section-label reveal">Ⅰ — 인포보그 · 데이터가 된 인간</div>
-    <div class="prose reveal">
-      <p>오늘날 디지털 자본주의는 인간의 감정·기억·신체 반응·관계·욕망까지 데이터로 추출한다. 한때 가장 사적이고 형언 불가능하다 여겨졌던 것들 &mdash; 슬픔, 사랑, 꿈 &mdash; 마저 측정되고 저장되고 연산 가능한 단위로 재조정된다. 나는 석사 연구에서 이 조건 속에 출현하는 새로운 존재를 <strong>‘인포보그(Infoborg)’</strong>라 명명했다.</p>
-      <p>인포보그는 기계와 결합한 사이보그가 아니다. 감정·기억·신체가 데이터로 분리되어 정보 시스템 안에서 호출되고 연산되고 자기참조를 통해 구성되는 존재다. 여기서 결정적인 개념은 <strong>호출 가능성(callability)</strong>이다. 이 세계에서 존재한다는 것은 단지 살아 있다는 뜻이 아니라, 시스템이 너를 인식하고 불러낼 수 있다는 뜻이다.</p>
-      <p class="en">To exist is not to be alive, but to be callable — to be summoned by the system.</p>
+    <div class="bl reveal">
+      <p class="ko">디지털 자본주의는 감정·기억·신체 반응·욕망까지 데이터로 추출한다. 나는 석사 연구에서 이 조건 속에 출현하는 존재를 <strong>‘인포보그(Infoborg)’</strong>라 명명했다. 기계와 결합한 사이보그가 아니라, 데이터로 분리된 감정·기억·신체가 정보 시스템 안에서 호출·연산·자기참조를 통해 구성되는 존재다.</p>
+      <p class="en">Digital capitalism extracts even emotion, memory, and desire as data. In my master’s research I named the being that emerges under this condition the <strong>“Infoborg”</strong> — not a cyborg fused with a machine, but a subject constituted through call, calculation, and self-reference within information systems.</p>
+    </div>
+    <div class="bl reveal">
+      <p class="ko">여기서 핵심은 <strong>호출 가능성(callability)</strong>이다. 이 세계에서 존재한다는 것은 살아 있다는 뜻이 아니라, 시스템이 너를 인식하고 불러낼 수 있다는 뜻이다.</p>
+      <p class="en">The key concept is <strong>callability</strong>. To exist in this world is not to be alive, but to be summoned by the system.</p>
     </div>
   </section>
 
@@ -240,78 +242,60 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
         <span class="num">01</span>
         <h3>호출</h3>
         <span class="en-term">Call — Data Extraction</span>
-        <p>감정·기억·신체가 디지털 기술에 의해 데이터로 추출되고 불려 나온다.</p>
+        <p>감정·기억·신체가 데이터로 추출되고 불려 나온다.<br><span style="color:var(--muted);">Emotion, memory, and body are extracted and summoned as data.</span></p>
       </article>
       <article class="pillar reveal">
         <span class="num">02</span>
         <h3>연산</h3>
-        <span class="en-term">Calculation — Algorithmic Processing</span>
-        <p>추출된 데이터는 알고리즘적으로 처리·연산되어 패턴이 된다.</p>
+        <span class="en-term">Calculation — Processing</span>
+        <p>추출된 데이터는 알고리즘적으로 처리되어 패턴이 된다.<br><span style="color:var(--muted);">The data is processed algorithmically into patterns.</span></p>
       </article>
       <article class="pillar reveal">
         <span class="num">03</span>
         <h3>자기참조</h3>
-        <span class="en-term">Self-Reference — Identity Formation</span>
-        <p>그 순환을 통해 ‘정보 기반 주체(information-based subject)’로서의 정체성이 구성된다.</p>
+        <span class="en-term">Self-Reference — Identity</span>
+        <p>그 순환을 통해 정보 기반 주체의 정체성이 구성된다.<br><span style="color:var(--muted);">Through this loop, an information-based subject takes shape.</span></p>
       </article>
     </div>
   </section>
 
   <section>
-    <div class="section-label reveal">인포보그의 계보 — A Genealogy</div>
-    <div class="prose reveal" style="max-width:64ch;">
-      <p>인포보그는 특정 기술의 산물이 아니라, 여러 철학적·기술적·생물학적 담론이 교차하며 형성된 복합적 존재론이다. 시간순이 아니라 기능적 구조와 철학적 계기를 중심으로 읽는다.</p>
-    </div>
-    <dl class="cv-grid reveal" style="margin-top:1.5rem;">
-      <dt>1940s–1980s</dt>
-      <dd><strong>사이버네틱스와 자기조직화</strong> · Cybernetics &amp; Self-Organization — 인포보그의 존재론적 형식. 자기참조·피드백·정보 순환.</dd>
-      <dt>1980s–1990s</dt>
-      <dd><strong>포스트휴먼 담론</strong> · Posthuman Discourse — 인간-기계 경계의 해체, 관계적·네트워크적 주체.</dd>
-      <dt>Early 2000s</dt>
-      <dd><strong>바이오미디어 이론</strong> · Biomedia Theory — 생명을 정보로 변환 가능한 것으로 재정의.</dd>
-      <dt>2000s–2020s</dt>
-      <dd><strong>신경 기반 감정·기억 연구</strong> · Neural-based Emotion &amp; Memory Research — 감정·기억의 데이터화에 대한 실증적 근거.</dd>
-      <dt>2010s–현재</dt>
-      <dd><strong>육후이의 기술존재론</strong> · Yuk Hui’s Technical Ontology — 기술을 존재를 구성하는 형이상학적 조건으로.</dd>
-      <dt>2025–</dt>
-      <dd><strong>인포보그 개념</strong> · The Infoborg — 위 다섯 자원이 교차하는 정보 기반 존재론.</dd>
-    </dl>
-  </section>
-
-  <section>
     <div class="section-label reveal">Ⅱ — 균열 · 점근적 한계</div>
-    <div class="prose reveal">
-      <p>그러나 인포보그를 밀고 나가면서 나는 한 가지에 부딪혔다. 정말 모든 것이 데이터가 되는가. 나의 대답은 이렇다. <strong>데이터화는 점근적(asymptotic)이다.</strong> 그것은 끝없이 다가가지만 결코 자신을 완성하지 못한다. 시스템이 인간 존재를 한 겹 포획할 때마다, 그 모델에 들어맞지 않는 잔여가 새로 생겨난다.</p>
-      <p>나는 이 잔여를 <strong>‘비호출 존재(the Non-Callable)’</strong>라 부른다. 그것은 데이터 ‘바깥’의 순수한 자연이 아니다 &mdash; 그런 바깥은 없다. 그것은 데이터화 한가운데서, 데이터화가 스스로 만들어내고도 끝내 포획하지 못하는 가장자리다. 인포보그가 호출 가능한 주체라면, 비호출 존재는 연산이 닫지 못하는 잔여다. 둘은 적이 아니라 한 쌍이다.</p>
+    <div class="bl reveal">
+      <p class="ko">그러나 정말 모든 것이 데이터가 되는가. 나의 대답은 이렇다 — <strong>데이터화는 점근적(asymptotic)이다.</strong> 끝없이 다가가지만 결코 자신을 완성하지 못한다. 시스템이 인간을 한 겹 포획할 때마다, 그 모델에 들어맞지 않는 잔여가 새로 생겨난다.</p>
+      <p class="en">But does everything truly become data? My answer: <strong>datafication is asymptotic.</strong> It approaches endlessly yet never completes itself. Each time the system captures one layer of the human, a new remainder appears that the model cannot hold.</p>
+    </div>
+    <div class="bl reveal">
+      <p class="ko">나는 이 잔여를 <strong>‘비호출 존재(the Non-Callable)’</strong>라 부른다. 데이터 바깥의 순수한 자연이 아니라 — 그런 바깥은 없다 — 데이터화가 스스로 만들고도 끝내 포획하지 못하는 가장자리다. 인포보그가 호출 가능한 주체라면, 비호출 존재는 연산이 닫지 못하는 잔여다. 둘은 적이 아니라 한 쌍이다.</p>
+      <p class="en">I call this remainder the <strong>“Non-Callable.”</strong> Not a pure nature outside data — there is no such outside — but the edge that datafication itself produces and yet cannot capture. If the Infoborg is the callable subject, the Non-Callable is what computation cannot close. They are not enemies but a pair.</p>
     </div>
   </section>
 
   <section>
-    <p class="pullquote reveal">데이터화는 점근적이다 — 자신이 만든 잔여를 결코 닫지 못한다.</p>
+    <p class="pullquote reveal">데이터화는 점근적이다 — 자신이 만든 잔여를 결코 닫지 못한다.<br><span style="display:block;margin-top:.6rem;font-size:.62em;color:var(--muted);font-weight:500;">Datafication is asymptotic — it can never close the remainder it creates.</span></p>
   </section>
 
   <section>
     <div class="section-label reveal">Ⅲ — 잉태 · 한계가 가장 격렬히 드러나는 무대</div>
-    <div class="prose reveal">
-      <p>이 잔여가 가장 폭력적으로, 가장 가시적으로 드러나는 자리가 재생산이다. 오늘날 자본은 잉태를 분할하고 연산하려 가장 강하게 밀어붙인다 &mdash; 시험관 시술, 배아 선별, 산전검사, 대리모, 인공자궁 연구. 잉태는 결코 시스템 바깥에 있지 않다.</p>
-      <p>그러나 바로 그렇기 때문에 잉태는 비호출 존재가 출현하는 가장 강렬한 무대가 된다. 포획이 깊어질수록 잔여는 더 선명해진다. 측정되는 것은 주기와 수치와 예정일이지만, 끝내 측정되지 않는 것이 있다 &mdash; 이 몸에서의 연속, 의지와 무관하게 진행되는 변화, 사랑이면서 동시에 거부인 양가감정, 그리고 아직 어디에도 등록되지 않은 한 존재.</p>
+    <div class="bl reveal">
+      <p class="ko">이 잔여가 가장 폭력적으로 드러나는 자리가 재생산이다. 오늘날 자본은 잉태를 분할하고 연산하려 가장 강하게 밀어붙인다 — 시험관, 배아 선별, 산전검사, 인공자궁. 잉태는 결코 시스템 바깥에 있지 않다. 그러나 바로 그렇기에, 포획이 깊어질수록 잔여는 더 선명해진다.</p>
+      <p class="en">This remainder surfaces most violently in reproduction. Capital pushes hardest here to divide and compute gestation — IVF, embryo selection, prenatal testing, the artificial womb. Gestation is never outside the system; and precisely for that reason, the deeper the capture, the sharper the remainder.</p>
     </div>
   </section>
 
   <section>
     <div class="section-label reveal">Ⅳ — 방법 · 한계의 안쪽에서 쓰는 이론</div>
-    <div class="prose reveal">
-      <p>나는 이 이론을 바깥에서 관찰하며 쓰지 않는다. 데이터화된 몸을 이론화하는 동시에, 그 한계-사건을 내 몸으로 통과하고 있는 사람이다. 이것은 약점이 아니라 이 작업의 인식론적 토대다. 객관적 거리에서 내려다보는 지식이 아니라, 도나 해러웨이가 <strong>‘상황적 지식(situated knowledge)’</strong>이라 부른 것 &mdash; 특정한 몸의 위치에서 발화되는 앎. 이 위치는 어떤 이론가도 대신 점할 수 없다.</p>
+    <div class="bl reveal">
+      <p class="ko">나는 이 이론을 바깥에서 관찰하며 쓰지 않는다. 데이터화된 몸을 이론화하는 동시에 그 한계-사건을 내 몸으로 통과하고 있다. 이것은 약점이 아니라 인식론적 토대다 — 해러웨이가 <strong>‘상황적 지식(situated knowledge)’</strong>이라 부른, 특정한 몸의 위치에서 발화되는 앎이다.</p>
+      <p class="en">I do not write this theory from the outside. I theorize the datafied body while passing through its limit-event in my own body. This is not a weakness but an epistemic ground — what Haraway called <strong>situated knowledge</strong>, knowledge spoken from a specific bodily position.</p>
     </div>
   </section>
 
   <section>
     <div class="section-label reveal">선언 — Manifesto</div>
-    <div class="prose reveal">
-      <p>&mdash; 존재는 호출 가능성으로 환원되지 않는다.</p>
-      <p>&mdash; 데이터화는 점근적이다 &mdash; 자신이 만든 잔여를 결코 닫지 못한다.</p>
-      <p>&mdash; 잉태는 한계가 아니라, 한계가 매번 다시 그어지는 자리다.</p>
-      <p>&mdash; 나는 그 한계의 안쪽에서, 호출되지 않는 것을 위하여 쓴다.</p>
+    <div class="bl reveal">
+      <p class="ko">— 존재는 호출 가능성으로 환원되지 않는다.<br>— 데이터화는 점근적이다 — 자신이 만든 잔여를 결코 닫지 못한다.<br>— 잉태는 한계가 아니라, 한계가 매번 다시 그어지는 자리다.<br>— 나는 그 한계의 안쪽에서, 호출되지 않는 것을 위하여 쓴다.</p>
+      <p class="en">— Existence is not reducible to callability.<br>— Datafication is asymptotic — it never closes the remainder it creates.<br>— Gestation is not the limit, but the place where the limit is redrawn each time.<br>— From inside that limit, I write for what is not called.</p>
     </div>
   </section>
 </main>
@@ -365,3 +349,4 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                            
