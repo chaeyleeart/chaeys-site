@@ -156,7 +156,7 @@ h2.lead em { font-style:normal; color:var(--ink); border-bottom:2px solid var(--
 
 /* ---------- CTA / contact ---------- */
 .contact-box { border:1px solid var(--line); border-radius:6px; padding:clamp(1.8rem,5vw,3rem); background:var(--bg-2); }
-.contact-box a.mail { font-size:clamp(1.2rem,3.4vw,2rem); color:var(--ink); font-weight:600; border-bottom:2px solid var(--ink); letter-spacing:-0.02em;}
+.contact-box a.mail { font-size:clamp(.95rem,1.6vw,1.15rem); color:var(--ink); font-weight:500; border-bottom:1px solid var(--ink); letter-spacing:-0.01em;}
 .contact-box a.mail:hover { color:var(--muted); border-color:var(--muted); }
 
 /* ---------- Footer ---------- */
@@ -237,6 +237,15 @@ a.index-item:hover { padding-left: .5rem; }
 .q-block .q-ko { font-weight:600; font-size:clamp(1.8rem,5vw,3.2rem); line-height:1.28; letter-spacing:-0.035em; color:var(--ink); }
 .q-block .q-ko em { font-style:normal; border-bottom:3px solid var(--ink); padding-bottom:1px; }
 .q-block .q-en { margin-top:1.4rem; max-width:46ch; font-size:clamp(1rem,1.5vw,1.12rem); color:var(--muted); line-height:1.6; }
+
+/* ---------- Home hero image ---------- */
+.home-hero-img { width:100%; aspect-ratio:16/7; object-fit:cover; border-radius:4px; display:block; }
+@media (max-width:720px){ .home-hero-img { aspect-ratio:4/3; } }
+
+/* ---------- Works gallery (masonry) ---------- */
+.gallery { columns: 3 280px; column-gap: 14px; margin-top: 2rem; }
+.gallery img { width:100%; margin:0 0 14px; border-radius:4px; display:block; break-inside:avoid; background:var(--bg-2); }
+.gallery-cap { font-size:.72rem; letter-spacing:.04em; color:var(--muted); margin-top:.4rem; }
 
 /* ---------- Brand logo ---------- */
 .brand-logo { height: 40px; width: auto; display: block; }
