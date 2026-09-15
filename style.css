@@ -68,6 +68,13 @@ section { padding-block:2.8rem; }
 .text-link:hover { color:var(--muted); }
 .work-index { padding-top:.3rem; }
 .work-index .cover { aspect-ratio:40/11; }
+.work-index .proj-card + .proj-card { margin-top:3.5rem; }
+.work-index .cover-standard { aspect-ratio:16/9; }
+.work-title-ko { display:block; font-size:.8em; font-weight:400; color:var(--muted); margin-top:.5rem; word-break:keep-all; }
+.project-standard .film-player,.project-standard .film-stills img { aspect-ratio:16/9; }
+.project-standard .film-stills { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.project-standard .project-summary p + p { margin-top:1rem; }
+.project-standard .film-note { margin-top:.7rem; }
 .proj-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2rem; padding-top:.5rem; }
 .proj-card { min-width:0; display:block; }
 .cover { aspect-ratio:4/3; overflow:hidden; background:#f4f4f4; }
@@ -117,6 +124,7 @@ section { padding-block:2.8rem; }
   .cv-grid dt { padding-block:.85rem .2rem; }
   .cv-grid dd { border-top:0; padding-block:0 1rem; }
   .film-stills { gap:12px; margin-top:1.5rem; }
+  .project-standard .film-stills { grid-template-columns:1fr; }
   .film-section { padding-bottom:2rem; }
   .site-footer { margin-top:2.6rem; }
 }
