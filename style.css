@@ -59,6 +59,7 @@ section { padding-block:2.8rem; }
 .film-player { background:#eef0f0; aspect-ratio:40/11; }
 .film-stills { display:grid; gap:18px; margin-top:2.4rem; }
 .film-stills img { background:#eef0f0; aspect-ratio:40/11; }
+.film-stills.sameboat-stills img { aspect-ratio:auto; height:auto; }
 .project-details { border-top:1px solid var(--line); }
 .cv-grid { display:grid; grid-template-columns:145px 1fr; gap:0 2rem; }
 .cv-grid dt,.cv-grid dd { border-top:1px solid var(--line); padding-block:.85rem; }
